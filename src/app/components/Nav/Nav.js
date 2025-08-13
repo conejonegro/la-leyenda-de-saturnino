@@ -18,9 +18,9 @@ export default function Nav() {
   }, []);
 
   const links = [
-   /* { href: "/quienes-somos", label: "Quiénes Somos" },
+   /* { href: "/quienes-somos", label: "Quiénes Somos" }, */
     { href: "/trailer", label: "Trailer" },
-    { href: "/equipo", label: "Equipo" },
+   /* { href: "/equipo", label: "Equipo" },
     { href: "/contacto", label: "Contacto" }, */
   ];
 
