@@ -123,20 +123,20 @@ export default function TrailerPage() {
 
       <section className="mb-12">
         <TrailerPlayer youtubeId="OfZrLVyDPqY" autoPlay={false} muted={false} />
-      {/*}  <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <FactItem icon={<span>🎬</span>} label="Duración" value="1:57" />
           <FactItem icon={<span>📍</span>} label="Origen" value="Chihuahua, MX" />
           <FactItem icon={<span>🗓️</span>} label="Año" value="2025" />
           <FactItem icon={<span>🏆</span>} label="Selección" value="Festival TBD" />
-        </div> */}
+        </div> 
       </section>
 
       <section>
         <div className="mb-4 flex items-center justify-between">
-         {/* <h2 className="text-xl font-medium tracking-tight sm:text-2xl">Galería</h2> */}
+          <h2 className="text-xl font-medium tracking-tight sm:text-2xl">Galería</h2> 
          
         </div>
-     { /*  <Gallery />*/ }
+       <Gallery />
       </section>
     </main>
   );
