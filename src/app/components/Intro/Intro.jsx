@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CalendarDays, Shield, Clapperboard, Timer, Users, Award, ExternalLink, Film, Music, BookOpen } from "lucide-react";
+import { CalendarDays, Shield, Clapperboard, Timer, Users, Award, ExternalLink, Film } from "lucide-react";
 
 export default function FilmIntro() {
   // Datos base
@@ -80,14 +80,7 @@ export default function FilmIntro() {
             </div>
 
             {/* Material transmedia */}
-            <div className="mt-8 flex flex-wrap items-center gap-3 text-sm text-white/80">
-              <span className="inline-flex items-center gap-2">
-                <Music className="h-4 w-4" /> Disco inspirado en la historia
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <BookOpen className="h-4 w-4" /> Libro con el storyboard
-              </span>
-            </div>
+          
           </div>
 
           {/* Columna derecha: campaña */}
