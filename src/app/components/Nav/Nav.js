@@ -30,15 +30,15 @@ export default function Nav() {
 
   <nav
     className={
-      "backdrop-blur supports-[backdrop-filter]:bg-black/50 bg-black/80 text-white transition-shadow" +
-      (scrolled ? " shadow-[0_8px_30px_rgba(0,0,0,0.3)]" : "")
+      "backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/60 text-gray-900 transition-shadow" +
+      (scrolled ? " shadow-sm" : "")
     }
   >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-white/10">
+              <div className="relative h-10 w-10 overflow-hidden rounded-full ring-1 ring-gray-200">
                 <Image
                   src="/assets/logo-saturnino.png"
                   alt="La Leyenda de Saturnino"
@@ -49,8 +49,8 @@ export default function Nav() {
                 />
               </div>
               <div className="hidden sm:block">
-                <span className="font-semibold tracking-wide">La Leyenda de Saturnino</span>
-                <div className="text-xs text-white/60 leading-3">Una película de fe y destino</div>
+                <span className="font-semibold tracking-wide text-gray-900">La Leyenda de Saturnino</span>
+                <div className="text-xs text-gray-600 leading-3">Una película de fe y destino</div>
               </div>
             </Link>
 
@@ -70,7 +70,7 @@ export default function Nav() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 p-2 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              className="md:hidden inline-flex items-center justify-center rounded-xl border border-gray-200 p-2 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
               aria-expanded={open}
               aria-label="Abrir menú"
               onClick={() => setOpen((v) => !v)}
@@ -88,7 +88,7 @@ export default function Nav() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="md:hidden overflow-hidden border-t border-white/10"
+              className="md:hidden overflow-hidden border-t border-gray-200 bg-white"
             >
               <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4">
                 <div className="flex flex-col gap-3">
@@ -96,7 +96,7 @@ export default function Nav() {
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="rounded-lg px-3 py-2 text-base hover:bg-white/5"
+                      className="rounded-lg px-3 py-2 text-base text-gray-800 hover:bg-gray-50"
                       onClick={() => setOpen(false)}
                     >
                       {l.label}
@@ -119,7 +119,7 @@ function NavLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="group relative px-1.5 py-2 text-sm tracking-wide text-white/90 hover:text-white transition-colors"
+      className="group relative px-1.5 py-2 text-sm tracking-wide text-gray-700 hover:text-gray-900 transition-colors"
     >
       <span>{children}</span>
       <span className="pointer-events-none absolute -bottom-0.5 left-0 h-[2px] w-0 bg-amber-400/90 transition-all duration-300 group-hover:w-full" />

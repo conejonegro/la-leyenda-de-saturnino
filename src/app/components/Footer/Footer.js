@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, ExternalLink, Film } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   const links = [
@@ -14,17 +14,17 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-white">
+    <footer className="text-gray-900 bg-white">
       {/* Borde superior brillante como el del navbar */}
       <div className="h-[2px] w-full bg-gradient-to-r from-amber-400/0 via-amber-400 to-amber-400/0" />
 
-      <div className="bg-gradient-to-b from-gray-900 to-black">
+      <div className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-14">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Marca */}
             <div>
               <div className="flex items-center gap-3">
-                <div className="relative h-12 w-12 overflow-hidden rounded-full ring-1 ring-white/10">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full ring-1 ring-gray-200">
                   <Image
                     src="/assets/logo-saturnino.png"
                     alt="La Leyenda de Saturnino"
@@ -35,14 +35,14 @@ export default function Footer() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold tracking-wide">La Leyenda de Saturnino</p>
-                  <p className="text-xs text-white/60 leading-3">Una película de fe y destino</p>
+                  <p className="font-semibold tracking-wide text-gray-900">La Leyenda de Saturnino</p>
+                  <p className="text-xs text-gray-600 leading-3">Una película de fe y destino</p>
                 </div>
               </div>
 
               <div className="mt-6">
-                <h3 className="text-lg font-semibold mb-2">Dirigida por</h3>
-                <p className="text-white/70">Hernán Rocha</p>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">Dirigida por</h3>
+                <p className="text-gray-700">Hernán Rocha</p>
               </div>
 
              
@@ -50,7 +50,7 @@ export default function Footer() {
 
             {/* Enlaces rápidos (coherentes con el nav) */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Explorar</h3>
+              <h3 className="text-lg font-semibold mb-4 text-gray-900">Explorar</h3>
               <ul className="space-y-2">
                 {links.map((l) => (
                   <li key={l.href}>
@@ -62,43 +62,37 @@ export default function Footer() {
 
             {/* Contacto */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Contacto</h3>
-              <ul className="space-y-3 text-white/80">
-                <li className="flex items-center gap-2 hover:text-white transition-colors">
-                  <Mail className="h-4 w-4" /> leyendadesaturnino@gmail.com
+              <h3 className="text-lg font-semibold mb-4 text-gray-900">Contacto</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-center gap-2 hover:text-gray-900 transition-colors">
+                  <Mail className="h-4 w-4 text-amber-600" /> leyendadesaturnino@gmail.com
                 </li>
-                <li className="flex items-center gap-2 hover:text-white transition-colors">
-                  <Mail className="h-4 w-4" /> h.rocha3@gmail.com
+                <li className="flex items-center gap-2 hover:text-gray-900 transition-colors">
+                  <Mail className="h-4 w-4 text-amber-600" /> h.rocha3@gmail.com
                 </li>
-                <li className="flex items-center gap-2 hover:text-white transition-colors">
-                  <Mail className="h-4 w-4" /> pacojean0411@gmail.com
+                <li className="flex items-center gap-2 hover:text-gray-900 transition-colors">
+                  <Mail className="h-4 w-4 text-amber-600" /> pacojean0411@gmail.com
                 </li>
-                <li className="flex items-center gap-2 hover:text-white transition-colors">
-                  <Phone className="h-4 w-4" /> 811 4866 339
+                <li className="flex items-center gap-2 hover:text-gray-900 transition-colors">
+                  <Phone className="h-4 w-4 text-amber-600" /> 811 4866 339
                 </li>
               </ul>
             </div>
 
-            {/* Llamado a la acción / Apoyo */}
-            <div className="md:text-right">
-              <h3 className="text-lg font-semibold mb-4">Apóyanos</h3>
-              <KickstarterCTA fullWidth />
-              <p className="text-white/60 text-sm mt-3">
-                Tu apoyo impulsa la postproducción y distribución del film.
-              </p>
-            </div>
+            {/* espacio reservado: se removió CTA de Kickstarter */}
+            <div />
           </div>
 
           {/* Línea divisoria y legal */}
-          <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-white/60">
+          <div className="border-t border-gray-200 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-gray-600">
               © 2025 La Leyenda de Saturnino. Todos los derechos reservados.
             </p>
-            <div className="flex items-center gap-6 text-sm text-white/60">
-              <Link href="#aviso-privacidad" className="hover:text-white transition-colors">
+            <div className="flex items-center gap-6 text-sm text-gray-600">
+              <Link href="#aviso-privacidad" className="hover:text-gray-900 transition-colors">
                 Aviso de Privacidad
               </Link>
-              <Link href="#terminos" className="hover:text-white transition-colors">
+              <Link href="#terminos" className="hover:text-gray-900 transition-colors">
                 Términos y Condiciones
               </Link>
             </div>
@@ -115,7 +109,7 @@ function FooterLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="group relative inline-block px-0.5 py-1 text-white/85 hover:text-white transition-colors"
+      className="group relative inline-block px-0.5 py-1 text-gray-800 hover:text-gray-900 transition-colors"
     >
       <span>{children}</span>
       <span className="pointer-events-none absolute -bottom-0.5 left-0 h-[2px] w-0 bg-amber-400/90 transition-all duration-300 group-hover:w-full" />

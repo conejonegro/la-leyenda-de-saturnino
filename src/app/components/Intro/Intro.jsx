@@ -27,23 +27,23 @@ export default function FilmIntro() {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-black to-gray-950 text-white">
+    <section className="bg-white text-gray-900">
       {/* Borde superior ámbar, coherente con el Nav/Footer */}
       <div className="h-[2px] w-full bg-gradient-to-r from-amber-400/0 via-amber-400 to-amber-400/0" />
 
       <div className="mx-auto max-w-7xl px-6 py-16">
         {/* Encabezado */}
         <div className="max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900">
             La Leyenda de Saturnino
           </h2>
-          <p className="mt-2 text-white/70">
+          <p className="mt-2 text-gray-600">
             Un cortometraje surrealista y fantástico, orgullosamente filmado en Chihuahua.
           </p>
         </div>
 
         {/* Grid principal */}
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Columna izquierda: ficha + sinopsis */}
           <div className="lg:col-span-2">
             {/* Ficha técnica */}
@@ -54,7 +54,7 @@ export default function FilmIntro() {
             </div>
 
             {/* Sinopsis */}
-            <div className="mt-10 space-y-5 text-white/90 leading-relaxed">
+            <div className="mt-10 space-y-5 text-gray-700 leading-relaxed">
               <p>
                 Esta obra explora la búsqueda de sentido, la autodestrucción humana y el riesgo inherente al libre albedrío,
                 presentando una visión única sobre la condición humana.
@@ -68,13 +68,13 @@ export default function FilmIntro() {
 
             {/* Reparto */}
             <div className="mt-10">
-              <h3 className="text-xl font-semibold mb-3">Reparto</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Reparto</h3>
               <div className="flex flex-wrap gap-2">
                 {castMain.map((name) => (
                   <Pill key={name}>{name}</Pill>
                 ))}
               </div>
-              <p className="mt-4 text-white/70">
+              <p className="mt-4 text-gray-600">
                 También actúan: {castAlso.join(", ")}.
               </p>
             </div>
@@ -92,32 +92,32 @@ export default function FilmIntro() {
 
           {/* Columna derecha: campaña */}
           <aside className="lg:col-span-1">
-            <div className="rounded-2xl border border-amber-400/30 bg-gradient-to-b from-amber-900/10 to-transparent p-6">
-              <div className="flex items-center gap-2 text-amber-300">
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+              <div className="flex items-center gap-2 text-amber-700">
                 <Award className="h-5 w-5" />
-                <p className="text-sm">
+                <p className="text-sm text-amber-700">
                   Ganador del estímulo <span className="font-medium">Eká</span> del Gobierno del Estado de Chihuahua
                 </p>
               </div>
 
               <div className="mt-5">
-                <h3 className="text-lg font-semibold">Ayúdanos a culminar la postproducción</h3>
-                <p className="mt-2 text-sm text-white/80">
+                <h3 className="text-lg font-semibold text-gray-900">Ayúdanos a culminar la postproducción</h3>
+                <p className="mt-2 text-sm text-gray-700">
                   Meta: ${formatMoney(goal)} MXN · Recaudado: ~${formatMoney(raised)} MXN
                 </p>
 
                 {/* Barra de progreso */}
                 <div className="mt-4">
-                  <div className="h-2 w-full rounded-full bg-white/10 overflow-hidden">
+                  <div className="h-2 w-full rounded-full bg-gray-200 overflow-hidden">
                     <div
                       className="h-2 bg-amber-400 rounded-full transition-[width] duration-700"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
-                  <div className="mt-2 text-xs text-white/70">{progress}% de la meta</div>
+                  <div className="mt-2 text-xs text-gray-600">{progress}% de la meta</div>
                 </div>
 
-                <p className="mt-4 text-sm text-white/70">
+                <p className="mt-4 text-sm text-gray-600">
                   Quedan menos de 4 semanas para alcanzar la meta en Kickstarter (plataforma con máximo de 60 días;
                   si no se llega, se regresan las aportaciones).
                 </p>
@@ -138,12 +138,12 @@ export default function FilmIntro() {
 
 function FactItem({ icon, label, value }) {
   return (
-    <div className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 hover:bg-white/[0.04] transition-colors">
-      <div className="flex items-center gap-2 text-white/70">
+    <div className="group rounded-xl border border-gray-200 bg-white p-4 hover:bg-gray-50 transition-colors">
+      <div className="flex items-center gap-2 text-gray-600">
         {icon}
         <span className="text-xs tracking-wide">{label}</span>
       </div>
-      <div className="mt-1 text-sm sm:text-base font-medium">{value}</div>
+      <div className="mt-1 text-sm sm:text-base font-medium text-gray-900">{value}</div>
       {/* subrayado ámbar coherente */}
       <span className="mt-3 block h-[2px] w-0 bg-amber-400/90 transition-all duration-300 group-hover:w-full" />
     </div>
@@ -152,7 +152,7 @@ function FactItem({ icon, label, value }) {
 
 function Pill({ children }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-sm">
+    <span className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm text-gray-700">
       {children}
     </span>
   );

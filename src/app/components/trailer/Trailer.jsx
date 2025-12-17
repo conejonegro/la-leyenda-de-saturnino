@@ -2,17 +2,14 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// ------------------------------------------------------------
-// Reusable UI atoms (coherentes con tu estilo) – Javascript puro
-// ------------------------------------------------------------
 function FactItem({ icon, label, value }) {
   return (
-    <div className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 hover:bg-white/[0.04] transition-colors">
-      <div className="flex items-center gap-2 text-white/70">
+    <div className="group rounded-xl border border-gray-200 bg-white p-4 hover:bg-gray-50 transition-colors">
+      <div className="flex items-center gap-2 text-gray-600">
         {icon}
         <span className="text-xs tracking-wide">{label}</span>
       </div>
-      <div className="mt-1 text-sm sm:text-base font-medium">{value}</div>
+      <div className="mt-1 text-sm sm:text-base font-medium text-gray-900">{value}</div>
       <span className="mt-3 block h-[2px] w-0 bg-amber-400/90 transition-all duration-300 group-hover:w-full" />
     </div>
   );
@@ -20,20 +17,17 @@ function FactItem({ icon, label, value }) {
 
 function Pill({ children }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-sm">
+    <span className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm text-gray-700">
       {children}
     </span>
   );
 }
 
-// ------------------------------------------------------------
-// Trailer Player (YouTube o MP4)
-// ------------------------------------------------------------
 function TrailerPlayer({ youtubeId, src, poster, autoPlay = false, muted = true }) {
   const isYouTube = !!youtubeId;
   return (
-    <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
-      <div className="aspect-video w-full">
+    <div className="relative w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow">
+      <div className="aspect-video w-full bg-black/5">
         {isYouTube ? (
           <iframe
             className="h-full w-full"
@@ -44,7 +38,7 @@ function TrailerPlayer({ youtubeId, src, poster, autoPlay = false, muted = true 
           />
         ) : (
           <video
-            className="h-full w-full"
+            className="h-full w-full bg-black"
             poster={poster}
             controls
             autoPlay={autoPlay}
@@ -60,13 +54,10 @@ function TrailerPlayer({ youtubeId, src, poster, autoPlay = false, muted = true 
   );
 }
 
-// ------------------------------------------------------------
-// Galería
-// ------------------------------------------------------------
 const FALLBACK_IMAGES = [
   "/assets/galeria/galeria-1.png",
   "/assets/galeria/galeria-2.png",
-  "/assets/galeria/galeria-3.png"
+  "/assets/galeria/galeria-3.png",
 ];
 
 function Gallery({ images = FALLBACK_IMAGES }) {
@@ -79,7 +70,7 @@ function Gallery({ images = FALLBACK_IMAGES }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-20%" }}
           transition={{ duration: 0.35, delay: idx * 0.03 }}
-          className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.02]"
+          className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white"
         >
           <Image
             src={src}
@@ -88,17 +79,14 @@ function Gallery({ images = FALLBACK_IMAGES }) {
             height={800}
             className="h-36 w-full object-cover sm:h-40 md:h-44 lg:h-52 transition-transform duration-300 group-hover:scale-[1.03]"
           />
-          <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-60" />
         </motion.div>
       ))}
     </div>
   );
 }
 
-// ------------------------------------------------------------
-// Página de Trailer
-// ------------------------------------------------------------
-export default function TrailerPage() {
+export default function Trailer() {
   return (
     <main className="relative mx-auto max-w-6xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
       <section className="mb-10 flex flex-col items-start gap-4 sm:mb-12 sm:flex-row sm:items-center sm:justify-between">
@@ -122,21 +110,20 @@ export default function TrailerPage() {
       </section>
 
       <section className="mb-12">
-        <TrailerPlayer youtubeId="OfZrLVyDPqY" autoPlay={false} muted={false} />
+        <TrailerPlayer youtubeId="5a3kqcXkDck" autoPlay={false} muted={false} />
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <FactItem icon={<span>🎬</span>} label="Duración" value="1:57" />
           <FactItem icon={<span>📍</span>} label="Origen" value="Chihuahua, MX" />
           <FactItem icon={<span>🗓️</span>} label="Año" value="2025" />
           <FactItem icon={<span>🏆</span>} label="Selección" value="Festival TBD" />
-        </div> 
+        </div>
       </section>
 
       <section>
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-xl font-medium tracking-tight sm:text-2xl">Galería</h2> 
-         
+          <h2 className="text-xl font-medium tracking-tight sm:text-2xl">Galería</h2>
         </div>
-       <Gallery />
+        <Gallery />
       </section>
     </main>
   );

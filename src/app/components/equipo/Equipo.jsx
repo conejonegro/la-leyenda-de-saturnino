@@ -3,18 +3,17 @@
 import Link from "next/link";
 import { Clapperboard, Users, PenSquare, Film, ExternalLink } from "lucide-react";
 
-/** ---------- PAGE ---------- */
-export default function QuienesSomosPage() {
+export default function Equipo() {
   return (
-    <main className="text-white bg-gradient-to-b from-black to-gray-950">
+    <main className="bg-white text-gray-900">
       {/* Borde superior coherente con el Nav/Footer */}
       <div className="h-[2px] w-full bg-gradient-to-r from-amber-400/0 via-amber-400 to-amber-400/0" />
 
       <div className="mx-auto max-w-7xl px-6 py-14">
         {/* Header */}
         <header className="max-w-3xl">
-          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Crew</h1>
-          <p className="mt-3 text-white/70">
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900">Crew</h1>
+          <p className="mt-3 text-gray-600">
             “La Leyenda de Saturnino” es un cortometraje surrealista y fantástico hecho en Chihuahua por un equipo 100% mexicano.
           </p>
         </header>
@@ -56,14 +55,7 @@ export default function QuienesSomosPage() {
                 <>
                   <p>
                     Productor de cine y audiovisual con base en CDMX. Ciencias de la Comunicación (UNAM, 2004). Ha sido productor, productor
-                    ejecutivo y productor en línea en cine, TV y publicidad por más de 15 años. Créditos:{" "}
-                    <em>El silencio es bienvenido</em> (CCC, 2014, productor en línea y asociado), <em>Verónica</em> (The Visualistas, 2017,
-                    productor en línea de 2ª unidad), <em>La Promesa</em> (2018, Leos Films, productor en línea), <em>Po’bo’tzu</em> (2022,
-                    PIANO, gerente de producción y productor asociado).
-                  </p>
-                  <p className="mt-3">
-                    Documentales: <em>El encanto</em> (2022, MAGU Films, productor en línea), serie documental <em>CHINAMPA</em> (2020,
-                    Onírica Films, productor) y <em>RARARA</em> (2024, Drama Films, productor en línea).
+                    ejecutivo y productor en línea en cine, TV y publicidad por más de 15 años. Créditos: <em>El silencio es bienvenido</em> (CCC, 2014, productor en línea y asociado), <em>Verónica</em> (The Visualistas, 2017, productor en línea de 2ª unidad), <em>La Promesa</em> (2018, Leos Films, productor en línea), <em>Po’bo’tzu</em> (2022, PIANO, gerente de producción y productor asociado).
                   </p>
                 </>
               }
@@ -97,9 +89,7 @@ export default function QuienesSomosPage() {
               body={
                 <>
                   <p>
-                    Narrador chihuahuense con publicaciones de cuento y poema en varias antologías. Guionista del podcast{" "}
-                    <em>2050: el fin que no fue</em> y autor del cuento <em>Leyenda de Saturnino</em>, ganador del estímulo EKÁ 2024. Fue parte
-                    de la generación de Jóvenes Promesas de la FLM y publicado con el Tec de Monterrey y la UACH.
+                    Narrador chihuahuense con publicaciones de cuento y poema en varias antologías. Guionista del podcast <em>2050: el fin que no fue</em> y autor del cuento <em>Leyenda de Saturnino</em>, ganador del estímulo EKÁ 2024. Fue parte de la generación de Jóvenes Promesas de la FLM y publicado con el Tec de Monterrey y la UACH.
                   </p>
                 </>
               }
@@ -213,7 +203,7 @@ export default function QuienesSomosPage() {
         {/* CTA final (versión minimalista para no saturar) */}
         <div className="mt-14 flex flex-col sm:flex-row items-center gap-4">
           <KickstarterCTA />
-          <p className="text-sm text-white/70">
+          <p className="text-sm text-gray-600">
             Tu apoyo impulsa la postproducción y ayuda a descentralizar las producciones cinematográficas desde Chihuahua.
           </p>
         </div>
@@ -228,24 +218,24 @@ function SectionHeading({ title, icon }) {
   return (
     <div className="mb-5 flex items-center gap-3">
       {icon ? (
-        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-amber-50 ring-1 ring-amber-100 text-amber-600">
           {icon}
         </span>
       ) : null}
-      <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="text-2xl font-semibold tracking-tight text-gray-900">{title}</h2>
     </div>
   );
 }
 
 function BioCard({ name, role, body, icon }) {
   return (
-    <article className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+    <article className="rounded-2xl border border-gray-200 bg-white p-5">
       <div className="flex items-start gap-3">
-        {icon ? <div className="mt-1 text-amber-300">{icon}</div> : null}
+        {icon ? <div className="mt-1 text-amber-600">{icon}</div> : null}
         <div>
-          <h3 className="text-lg font-semibold">{name}</h3>
-          {role ? <p className="text-sm text-white/60">{role}</p> : null}
-          <div className="mt-3 text-white/85 leading-relaxed">{body}</div>
+          <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
+          {role ? <p className="text-sm text-gray-600">{role}</p> : null}
+          <div className="mt-3 text-gray-700 leading-relaxed">{body}</div>
         </div>
       </div>
     </article>
@@ -256,13 +246,13 @@ function CrewGrid({ groups }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {groups.map((g) => (
-        <div key={g.title} className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-          <h3 className="text-lg font-semibold">{g.title}</h3>
-          <ul className="mt-3 divide-y divide-white/5">
+        <div key={g.title} className="rounded-2xl border border-gray-200 bg-white p-5">
+          <h3 className="text-lg font-semibold text-gray-900">{g.title}</h3>
+          <ul className="mt-3 divide-y divide-gray-100">
             {g.rows.map(([person, role]) => (
               <li key={person + role} className="flex items-center justify-between py-2">
-                <span className="text-white/90">{person}</span>
-                <span className="text-sm text-white/60">{role}</span>
+                <span className="text-gray-900">{person}</span>
+                <span className="text-sm text-gray-600">{role}</span>
               </li>
             ))}
           </ul>
@@ -274,15 +264,15 @@ function CrewGrid({ groups }) {
 
 function CastCard({ name, body, imdb }) {
   return (
-    <article className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-      <h3 className="text-lg font-semibold">{name}</h3>
-      <div className="mt-2 text-white/85 leading-relaxed">{body}</div>
+    <article className="rounded-2xl border border-gray-200 bg-white p-5">
+      <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
+      <div className="mt-2 text-gray-700 leading-relaxed">{body}</div>
       {imdb ? (
         <Link
           href={imdb}
           target="_blank"
           rel="noopener noreferrer"
-          className="group mt-3 inline-flex items-center gap-2 text-amber-300 hover:text-amber-200"
+          className="group mt-3 inline-flex items-center gap-2 text-amber-600 hover:text-amber-500"
         >
           <ExternalLink className="h-4 w-4" />
           <span className="relative">
