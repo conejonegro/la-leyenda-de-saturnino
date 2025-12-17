@@ -6,11 +6,10 @@ import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   const links = [
-    { href: "#quienes-somos", label: "Quiénes Somos" },
-    { href: "#galeria", label: "Galería" },
-    { href: "#equipo", label: "Equipo" },
-    { href: "#proyecciones", label: "Proyecciones" },
-    { href: "#contacto", label: "Contacto" },
+    { href: "/quienes-somos", label: "Quiénes Somos" },
+    { href: "/trailer", label: "Trailer" },
+    { href: "/equipo", label: "Equipo" },
+    { href: "/contacto", label: "Contacto" },
   ];
 
   return (

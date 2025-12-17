@@ -18,8 +18,8 @@ export default function Nav() {
   }, []);
 
   const links = [
-   /* { href: "/quienes-somos", label: "Quiénes Somos" }, */
-    { href: "/trailer", label: "Trailer" }, 
+    { href: "/trailer", label: "Trailer" },
+    { href: "/quienes-somos", label: "Quiénes Somos" }, 
     { href: "/equipo", label: "Equipo" }, 
     { href: "/contacto", label: "Contacto" }, 
   ];
