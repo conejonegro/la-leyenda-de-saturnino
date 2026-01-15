@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Menu, X, ExternalLink, Film } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Nav() {
@@ -18,10 +18,10 @@ export default function Nav() {
   }, []);
 
   const links = [
-    { href: "/trailer", label: "Trailer" },
-    { href: "/quienes-somos", label: "Quiénes Somos" }, 
-    { href: "/equipo", label: "Equipo" }, 
-    { href: "/contacto", label: "Contacto" }, 
+    { href: "/#trailer", label: "Trailer" },
+    { href: "/#quienes-somos", label: "Quiénes Somos" }, 
+    { href: "/#equipo", label: "Equipo" }, 
+    { href: "/#contacto", label: "Contacto" }, 
   ];
 
   return (
@@ -63,11 +63,6 @@ export default function Nav() {
               ))}
             </div>
 
-            {/* CTA desktop */}
-            <div className="hidden md:flex">
-              <KickstarterCTA />
-            </div>
-
             {/* Mobile menu button */}
             <button
               className="md:hidden inline-flex items-center justify-center rounded-xl border border-gray-200 p-2 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
@@ -102,9 +97,7 @@ export default function Nav() {
                       {l.label}
                     </Link>
                   ))}
-                  <div className="pt-2">
-                    <KickstarterCTA fullWidth onClick={() => setOpen(false)} />
-                  </div>
+
                 </div>
               </div>
             </motion.div>
@@ -123,31 +116,6 @@ function NavLink({ href, children }) {
     >
       <span>{children}</span>
       <span className="pointer-events-none absolute -bottom-0.5 left-0 h-[2px] w-0 bg-amber-400/90 transition-all duration-300 group-hover:w-full" />
-    </Link>
-  );
-}
-
-function KickstarterCTA({ fullWidth, onClick }) {
-  return (
-    <Link
-      href="https://kickstarter.com/projects/leyenda-saturnino/la-leyenda-de-saturnino-el-profeta-de-chihuahua/"
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={onClick}
-      className={[
-        "relative inline-flex items-center justify-center gap-2 rounded-xl border border-amber-400/40",
-        "bg-gradient-to-b from-amber-500 to-amber-600 text-black font-semibold",
-        "shadow-[0_8px_20px_rgba(255,193,7,0.25)] hover:shadow-[0_10px_28px_rgba(255,193,7,0.35)]",
-        "px-4 py-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
-        fullWidth ? "w-full" : "",
-      ].join(" ")}
-    >
-      <Film className="h-4 w-4" />
-      <span>Apóyanos en Kickstarter</span>
-      <ExternalLink className="h-4 w-4" />
-      <span className="pointer-events-none absolute inset-0 rounded-xl [mask-image:linear-gradient(90deg,transparent,white,transparent)]">
-        <span className="absolute -left-full top-0 h-full w-1/3 bg-white/30 blur-sm animate-[shine_2.8s_ease-in-out_infinite]" />
-      </span>
     </Link>
   );
 }

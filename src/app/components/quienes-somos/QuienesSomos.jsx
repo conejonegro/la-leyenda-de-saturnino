@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function QuienesSomos() {
   return (
-    <main className="min-h-screen bg-white text-gray-900">
+    <main id="quienes-somos" className="min-h-screen bg-white text-gray-900">
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" />
@@ -115,14 +115,14 @@ export default function QuienesSomos() {
               <p className="mt-1 text-sm text-gray-700">Escríbenos para revisarlo juntos.</p>
             </div>
             <div className="flex gap-3">
-              <a
-                href="mailto:hola@laleyendadesaturnino.mx"
+              <Link
+                href="/#contacto"
                 className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm transition hover:shadow"
               >
                 Contacto
-              </a>
+              </Link>
               <Link
-                href="/equipo"
+                href="/#equipo"
                 className="rounded-xl border border-gray-200 px-5 py-3 text-sm font-semibold text-gray-800 transition hover:bg-gray-50"
               >
                 Conocer al equipo

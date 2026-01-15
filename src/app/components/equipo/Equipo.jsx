@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Clapperboard, Users, PenSquare, Film, ExternalLink } from "lucide-react";
+import { Clapperboard, Users, PenSquare, ExternalLink, Film } from "lucide-react";
 
 export default function Equipo() {
   return (
-    <main className="bg-white text-gray-900">
+    <main id="equipo" className="bg-white text-gray-900">
       {/* Borde superior coherente con el Nav/Footer */}
       <div className="h-[2px] w-full bg-gradient-to-r from-amber-400/0 via-amber-400 to-amber-400/0" />
 
@@ -81,20 +81,7 @@ export default function Equipo() {
           </div>
 
           {/* Co-guionista / Coordinador */}
-          <div className="mt-6">
-            <BioCard
-              icon={<PenSquare className="h-5 w-5" />}
-              name="Francisco Piñón (Paco Jean)"
-              role="Co-guionista · Coordinador de Producción"
-              body={
-                <>
-                  <p>
-                    Narrador chihuahuense con publicaciones de cuento y poema en varias antologías. Guionista del podcast <em>2050: el fin que no fue</em> y autor del cuento <em>Leyenda de Saturnino</em>, ganador del estímulo EKÁ 2024. Fue parte de la generación de Jóvenes Promesas de la FLM y publicado con el Tec de Monterrey y la UACH.
-                  </p>
-                </>
-              }
-            />
-          </div>
+        
         </section>
 
         {/* CREW */}
@@ -200,13 +187,6 @@ export default function Equipo() {
           </div>
         </section>
 
-        {/* CTA final (versión minimalista para no saturar) */}
-        <div className="mt-14 flex flex-col sm:flex-row items-center gap-4">
-          <KickstarterCTA />
-          <p className="text-sm text-gray-600">
-            Tu apoyo impulsa la postproducción y ayuda a descentralizar las producciones cinematográficas desde Chihuahua.
-          </p>
-        </div>
       </div>
     </main>
   );
@@ -282,28 +262,5 @@ function CastCard({ name, body, imdb }) {
         </Link>
       ) : null}
     </article>
-  );
-}
-
-/** ---------- CTA Minimalista Reutilizable ---------- */
-function KickstarterCTA({ fullWidth, onClick }) {
-  return (
-    <Link
-      href="https://kickstarter.com/projects/leyenda-saturnino/la-leyenda-de-saturnino-el-profeta-de-chihuahua/"
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={onClick}
-      className={[
-        "inline-flex items-center justify-center gap-2 rounded-lg border border-amber-500/50",
-        "bg-amber-500 hover:bg-amber-600 text-black font-medium",
-        "px-4 py-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
-        fullWidth ? "w-full" : "",
-      ].join(" ")}
-    >
-      <Film className="h-4 w-4" />
-      <span>Apóyanos en Kickstarter</span>
-      {/* Ocultamos el ícono de salida en móviles para simplificar */}
-      <ExternalLink className="h-4 w-4 hidden sm:block" />
-    </Link>
   );
 }

@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -55,40 +56,76 @@ function TrailerPlayer({ youtubeId, src, poster, autoPlay = false, muted = true 
 }
 
 const FALLBACK_IMAGES = [
-  "/assets/galeria/galeria-1.png",
-  "/assets/galeria/galeria-2.png",
-  "/assets/galeria/galeria-3.png",
+  "/assets/galeria/still-1.png",
+  "/assets/galeria/still-2.png",
+  "/assets/galeria/still-3.png",
+  "/assets/galeria/still-4.png",
+  "/assets/galeria/still-5.png",
+  "/assets/galeria/still-6.png",
 ];
 
 function Gallery({ images = FALLBACK_IMAGES }) {
+  const [activeImage, setActiveImage] = useState(null);
+
   return (
-    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4">
-      {images.map((src, idx) => (
-        <motion.div
-          key={src + idx}
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-20%" }}
-          transition={{ duration: 0.35, delay: idx * 0.03 }}
-          className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white"
+    <>
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4">
+        {images.map((src, idx) => (
+          <motion.button
+            key={src + idx}
+            type="button"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-20%" }}
+            transition={{ duration: 0.35, delay: idx * 0.03 }}
+            onClick={() => setActiveImage({ src, idx })}
+            className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white text-left"
+            aria-label={`Ver fotograma ${idx + 1} en grande`}
+          >
+            <Image
+              src={src}
+              alt={`Fotograma ${idx + 1} de La Leyenda de Saturnino`}
+              width={1200}
+              height={800}
+              className="h-36 w-full object-cover sm:h-40 md:h-44 lg:h-52 transition-transform duration-300 group-hover:scale-[1.03]"
+            />
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-60" />
+          </motion.button>
+        ))}
+      </div>
+
+      {activeImage ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setActiveImage(null)}
         >
-          <Image
-            src={src}
-            alt={`Fotograma ${idx + 1} de La Leyenda de Saturnino`}
-            width={1200}
-            height={800}
-            className="h-36 w-full object-cover sm:h-40 md:h-44 lg:h-52 transition-transform duration-300 group-hover:scale-[1.03]"
-          />
-          <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-60" />
-        </motion.div>
-      ))}
-    </div>
+          <div className="relative w-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              onClick={() => setActiveImage(null)}
+              className="absolute -top-10 right-0 text-sm text-white/80 hover:text-white"
+            >
+              Cerrar
+            </button>
+            <Image
+              src={activeImage.src}
+              alt={`Fotograma ${activeImage.idx + 1} de La Leyenda de Saturnino`}
+              width={1600}
+              height={1000}
+              className="h-auto w-full rounded-xl object-contain"
+            />
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 }
 
 export default function Trailer() {
   return (
-    <main className="relative mx-auto max-w-6xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
+    <main id="trailer" className="relative mx-auto max-w-6xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
       <section className="mb-10 flex flex-col items-start gap-4 sm:mb-12 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <motion.h1

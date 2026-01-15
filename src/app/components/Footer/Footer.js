@@ -78,7 +78,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* espacio reservado: se removió CTA de Kickstarter */}
             <div />
           </div>
 
@@ -112,37 +111,6 @@ function FooterLink({ href, children }) {
     >
       <span>{children}</span>
       <span className="pointer-events-none absolute -bottom-0.5 left-0 h-[2px] w-0 bg-amber-400/90 transition-all duration-300 group-hover:w-full" />
-    </Link>
-  );
-}
-
-function KickstarterCTA({ fullWidth, onClick }) {
-  return (
-    <Link
-      href="https://kickstarter.com/projects/leyenda-saturnino/la-leyenda-de-chihuahua"
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={onClick}
-      className={[
-        "relative inline-flex items-center justify-center gap-2 rounded-xl border border-amber-400/40",
-        "bg-gradient-to-b from-amber-500 to-amber-600 text-black font-semibold",
-        "shadow-[0_8px_20px_rgba(255,193,7,0.25)] hover:shadow-[0_10px_28px_rgba(255,193,7,0.35)]",
-        "px-4 py-2 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
-        fullWidth ? "w-full" : "",
-      ].join(" ")}
-    >
-
-
-      {/* efecto shine */}
-      <span className="pointer-events-none absolute inset-0 rounded-xl [mask-image:linear-gradient(90deg,transparent,white,transparent)]">
-        <span className="absolute -left-full top-0 h-full w-1/3 bg-white/30 blur-sm animate-[shine_2.8s_ease-in-out_infinite]" />
-      </span>
-      <style jsx>{`
-        @keyframes shine {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(350%); }
-        }
-      `}</style>
     </Link>
   );
 }

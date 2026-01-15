@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { CalendarDays, Shield, Clapperboard, Timer, Users, Award, ExternalLink, Film } from "lucide-react";
+import { CalendarDays, Shield, Clapperboard, Timer, Users, Award } from "lucide-react";
 
 export default function FilmIntro() {
   // Datos base
@@ -84,43 +83,7 @@ export default function FilmIntro() {
           </div>
 
           {/* Columna derecha: campaña */}
-          <aside className="lg:col-span-1">
-            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
-              <div className="flex items-center gap-2 text-amber-700">
-                <Award className="h-5 w-5" />
-                <p className="text-sm text-amber-700">
-                  Ganador del estímulo <span className="font-medium">Eká</span> del Gobierno del Estado de Chihuahua
-                </p>
-              </div>
-
-              <div className="mt-5">
-                <h3 className="text-lg font-semibold text-gray-900">Ayúdanos a culminar la postproducción</h3>
-                <p className="mt-2 text-sm text-gray-700">
-                  Meta: ${formatMoney(goal)} MXN · Recaudado: ~${formatMoney(raised)} MXN
-                </p>
-
-                {/* Barra de progreso */}
-                <div className="mt-4">
-                  <div className="h-2 w-full rounded-full bg-gray-200 overflow-hidden">
-                    <div
-                      className="h-2 bg-amber-400 rounded-full transition-[width] duration-700"
-                      style={{ width: `${progress}%` }}
-                    />
-                  </div>
-                  <div className="mt-2 text-xs text-gray-600">{progress}% de la meta</div>
-                </div>
-
-                <p className="mt-4 text-sm text-gray-600">
-                  Quedan menos de 4 semanas para alcanzar la meta en Kickstarter (plataforma con máximo de 60 días;
-                  si no se llega, se regresan las aportaciones).
-                </p>
-
-                <div className="mt-5">
-                  <KickstarterCTA fullWidth />
-                </div>
-              </div>
-            </div>
-          </aside>
+         
         </div>
       </div>
     </section>
@@ -148,27 +111,6 @@ function Pill({ children }) {
     <span className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-sm text-gray-700">
       {children}
     </span>
-  );
-}
-
-function KickstarterCTA({ fullWidth, onClick }) {
-  return (
-    <Link
-      href="https://kickstarter.com/projects/leyenda-saturnino/la-leyenda-de-saturnino-el-profeta-de-chihuahua/"
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={onClick}
-      className={[
-        "inline-flex items-center justify-center gap-2 rounded-lg border border-amber-500/50",
-        "bg-amber-500 hover:bg-amber-600 text-black font-medium",
-        "px-4 py-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
-        fullWidth ? "w-full" : "",
-      ].join(" ")}
-    >
-      <Film className="h-4 w-4" />
-      <span>Apóyanos en Kickstarter</span>
-      <ExternalLink className="h-4 w-4" />
-    </Link>
   );
 }
 
