@@ -131,9 +131,8 @@ function KickstarterCTA({ fullWidth, onClick }) {
         fullWidth ? "w-full" : "",
       ].join(" ")}
     >
-      <Film className="h-4 w-4" />
-      <span>Apóyanos en Kickstarter</span>
-      <ExternalLink className="h-4 w-4" />
+
+
       {/* efecto shine */}
       <span className="pointer-events-none absolute inset-0 rounded-xl [mask-image:linear-gradient(90deg,transparent,white,transparent)]">
         <span className="absolute -left-full top-0 h-full w-1/3 bg-white/30 blur-sm animate-[shine_2.8s_ease-in-out_infinite]" />
