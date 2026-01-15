@@ -1,4 +1,4 @@
-// original: app/quienes-somos/page.jsx
+
 import Link from "next/link";
 
 export const metadata = {

@@ -1,8 +1,8 @@
 import Hero from './components/Hero/Hero';
 import FilmIntro from './components/Intro/Intro'; 
-import Trailer from './components/trailer/page';
+import Trailer from './components/trailer/Trailer';
 import Equipo from './components/equipo/Equipo';
-import QuienesSomos from './components/quienes-somos/page';
+import QuienesSomos from './components/quienes-somos/QuienesSomos';
 import Contacto from './components/contacto/Contacto';
 
 
