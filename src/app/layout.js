@@ -17,6 +17,24 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "La Leyenda de Saturnino",
   description: "Una película de fe y destino - Dirigida por Hernán Rocha y producida por Paco Jean",
+  openGraph: {
+    title: "La Leyenda de Saturnino",
+    description: "Una película de fe y destino - Dirigida por Hernán Rocha y producida por Paco Jean",
+    images: [
+      {
+        url: "/assets/thumbnail.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "La Leyenda de Saturnino",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "La Leyenda de Saturnino",
+    description: "Una película de fe y destino - Dirigida por Hernán Rocha y producida por Paco Jean",
+    images: ["/assets/thumbnail.jpeg"],
+  },
 };
 
 export default function RootLayout({ children }) {
