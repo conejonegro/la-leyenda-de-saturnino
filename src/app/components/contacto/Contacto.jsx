@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function Contacto() {
   return (
-    <main id="contacto" className="min-h-screen bg-white text-gray-900">
+    <main id="contacto" className="bg-white text-gray-900">
       {/* HERO */}
       <section className="relative">
         <div className="mx-auto max-w-6xl px-6 pt-20 pb-10">
