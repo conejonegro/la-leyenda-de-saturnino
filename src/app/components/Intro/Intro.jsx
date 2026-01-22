@@ -13,14 +13,17 @@ export default function FilmIntro() {
     "Claudia Santiago",
     "Gerardo Castañeda",
     "Mauricio Torres",
+    "Ana Nieto",
+    "Armando Seañez",
+    "Chezzaro Bolaños Ledezma"
   ];
-  const castAlso = ['Ana Nieto', 'Armando Seañez', 'Octavio "Chez" Bolaños'];
+
 
   const facts = [
     { icon: <CalendarDays className="h-4 w-4" />, label: "Fecha de estreno", value: "Abril 2025" },
     { icon: <Shield className="h-4 w-4" />,        label: "Clasificación",    value: "B15" },
     { icon: <Clapperboard className="h-4 w-4" />,  label: "Género",           value: "Fantasía / Surrealismo" },
-    { icon: <Timer className="h-4 w-4" />,         label: "Duración",         value: "15 minutos" },
+    { icon: <Timer className="h-4 w-4" />,         label: "Duración",         value: "20 minutos" },
     { icon: <Users className="h-4 w-4" />,         label: "Dirigida por",     value: "Hernán Rocha" },
     { icon: <Users className="h-4 w-4" />,         label: "Producción",       value: "Alfredo Gómez" },
   ];
@@ -73,9 +76,7 @@ export default function FilmIntro() {
                   <Pill key={name}>{name}</Pill>
                 ))}
               </div>
-              <p className="mt-4 text-gray-600">
-                También actúan: {castAlso.join(", ")}.
-              </p>
+             
             </div>
 
             {/* Material transmedia */}

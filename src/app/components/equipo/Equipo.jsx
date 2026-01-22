@@ -20,7 +20,7 @@ export default function Equipo() {
 
         {/* Director / Guionista */}
         <section id="director" className="mt-12">
-          <SectionHeading icon={<Clapperboard className="h-5 w-5" />} title="Dirección y Guion" />
+          <SectionHeading icon={<Clapperboard className="h-5 w-5" />} title="Dirección" />
           <BioCard
             name="Hernán Rocha"
             role="Director · Guionista · Editor · Músico"
@@ -39,6 +39,25 @@ export default function Equipo() {
                   y <em>Xam-a-Pan</em> (en postproducción).
                 </p>
                 <p className="mt-3">Actualmente trabaja como editor y desarrolla proyectos futuros.</p>
+              </>
+            }
+          />
+        </section>
+
+         <section id="director" className="mt-12">
+          <SectionHeading icon={<Clapperboard className="h-5 w-5" />} title="Guion" />
+          <BioCard
+            name="FRANCISCO PIÑÓN (PACO JEAN)"
+            role="Guionista"
+            body={
+              <>
+                <p>
+                  Francisco es egresado de Letras Hispánicas (ITESM, 2012) y escribe desde antes. Su obra, principalmente, cuento y poesía, han sido reconocidas en el Concurso Nacional de Creación Literaria (2009), Encuentro de Jóvenes Promesas FLM-UMM, categoría poesía (FLM, 2012), Encuentro Nacional de escritores jóvenes Jesús Gardea, categoría cuento (UACH, 2015), beneficiario del fondo Arctivists del Human Rights Defender Hub (Universidad de York, 2020), participante en la primera edición de Mexicona (2020).
+                </p>
+                <p className="mt-3">
+                  Fue parte del podcast 2050: el fin que no fue, reconocido por Spotify entre los podcasts más escuchados en México (2020) y su trabajo ha inspirado obras de danza, cómic y libro ilustrado para niños. Tiene más de 10 años trabajando en áreas creativas dentro de distintas agencias de publicidad en CDMX, MTY y
+                  NY. Actualmente, escribe su primera antología de cuentos y guiones para corto y largometraje. https://pacojean.wordpress.com/
+                </p>
               </>
             }
           />

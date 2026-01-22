@@ -56,12 +56,13 @@ function TrailerPlayer({ youtubeId, src, poster, autoPlay = false, muted = true 
 }
 
 const FALLBACK_IMAGES = [
-  "/assets/galeria/still-1.png",
+  "/assets/galeria/still-1.jpg",
   "/assets/galeria/still-2.png",
   "/assets/galeria/still-3.png",
   "/assets/galeria/still-4.png",
   "/assets/galeria/still-5.png",
   "/assets/galeria/still-6.png",
+  "/assets/galeria/still-7.png",
 ];
 
 function Gallery({ images = FALLBACK_IMAGES }) {
@@ -148,12 +149,7 @@ export default function Trailer() {
 
       <section className="mb-12">
         <TrailerPlayer youtubeId="5a3kqcXkDck" autoPlay={false} muted={false} />
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <FactItem icon={<span>🎬</span>} label="Duración" value="1:57" />
-          <FactItem icon={<span>📍</span>} label="Origen" value="Chihuahua, MX" />
-          <FactItem icon={<span>🗓️</span>} label="Año" value="2025" />
-          <FactItem icon={<span>🏆</span>} label="Selección" value="Festival TBD" />
-        </div>
+        
       </section>
 
       <section>

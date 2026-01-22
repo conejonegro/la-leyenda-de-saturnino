@@ -71,40 +71,6 @@ export default function QuienesSomos() {
         </div>
       </section>
 
-      {/* CRÉDITOS PRINCIPALES (teaser hacia /equipo) */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-gray-900">Créditos principales</h2>
-          <Link
-            href="/equipo"
-            className="text-sm underline decoration-amber-200 hover:decoration-amber-300 text-gray-800"
-          >
-            Ver biografías completas
-          </Link>
-        </div>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <p className="text-sm uppercase tracking-widest text-gray-500">Dirección y Guion</p>
-            <h3 className="mt-1 font-medium text-gray-900">Hernán Rocha</h3>
-            <p className="mt-1 text-sm text-gray-700">Director · Guionista · Editor · Músico</p>
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <p className="text-sm uppercase tracking-widest text-gray-500">Producción</p>
-            <h3 className="mt-1 font-medium text-gray-900">Rodrigo Martínez Alanís</h3>
-            <p className="mt-1 text-sm text-gray-700">Productor</p>
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <p className="text-sm uppercase tracking-widest text-gray-500">Dirección Creativa</p>
-            <h3 className="mt-1 font-medium text-gray-900">Alfredo Gómez</h3>
-            <p className="mt-1 text-sm text-gray-700">Productor · Director Creativo (Clivus)</p>
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <p className="text-sm uppercase tracking-widest text-gray-500">Co-guion y Producción</p>
-            <h3 className="mt-1 font-medium text-gray-900">Francisco Piñón (Paco Jean)</h3>
-            <p className="mt-1 text-sm text-gray-700">Co-guionista · Coordinador de Producción</p>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="border-t border-gray-100 bg-white">
