@@ -15,7 +15,9 @@ export default function FilmIntro() {
     "Mauricio Torres",
     "Ana Nieto",
     "Armando Seañez",
-    "Chezzaro Bolaños Ledezma"
+    "Chezaro Bolaños Ledezma",
+    "Roberto Pacheco",
+    "Danna Valeria Ortiz"
   ];
 
 

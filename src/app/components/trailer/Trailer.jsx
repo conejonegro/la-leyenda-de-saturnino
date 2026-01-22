@@ -86,8 +86,8 @@ function Gallery({ images = FALLBACK_IMAGES }) {
             <Image
               src={src}
               alt={`Fotograma ${idx + 1} de La Leyenda de Saturnino`}
-              width={1200}
-              height={800}
+              width={620}
+              height={400}
               className="h-36 w-full object-cover sm:h-40 md:h-44 lg:h-52 transition-transform duration-300 group-hover:scale-[1.03]"
             />
             <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-60" />
@@ -102,7 +102,7 @@ function Gallery({ images = FALLBACK_IMAGES }) {
           aria-modal="true"
           onClick={() => setActiveImage(null)}
         >
-          <div className="relative w-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
+          <div className="relative flex w-full max-w-5xl justify-center" onClick={(event) => event.stopPropagation()}>
             <button
               type="button"
               onClick={() => setActiveImage(null)}
@@ -113,9 +113,10 @@ function Gallery({ images = FALLBACK_IMAGES }) {
             <Image
               src={activeImage.src}
               alt={`Fotograma ${activeImage.idx + 1} de La Leyenda de Saturnino`}
-              width={1600}
-              height={1000}
-              className="h-auto w-full rounded-xl object-contain"
+              width={640}
+              height={500}
+              sizes="(min-width: 1024px) 80vw, 90vw"
+              className="max-h-[80vh] w-auto max-w-[90vw] rounded-xl object-contain"
             />
           </div>
         </div>
